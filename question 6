@@ -1,0 +1,11 @@
+user = input("Hello guys!!! Welcome to my sentence reverse program\n\nHere you can reverse your sentence.\n\nWhy don't you have a go for yourself?\n\nPlease enter in a sentence : ").split(" ")# ask user for input and split whenever there is a space between the sentence ...1
+print(user)#...1
+
+newList =[]#blank list.....1
+
+for i in range(1, len(user)+1):#.....n
+    newList.append(user[-i]) #add the user input to the blank list...n
+    
+print(" ".join(newList))#print newlist with the reverse sentence ...1
+    
+"Big O= 4+ 2n"
