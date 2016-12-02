@@ -1,0 +1,20 @@
+def searchBinary(a, number1,number2):# creating a funtion
+
+    #for loop to search between the two numbers
+    for x in range(number1,number2): 
+        first = 0 #The first number in the array"0"
+        last = len(a)-1 #The last number in array "42"
+        found = False 
+ #while 0 is less than or eual to 42 and not found perform the code below
+        while first<=last and not found:
+            midpoint = (first + last)//2#calculating for midpoint
+            if a[midpoint] == x:
+                found = True 
+            else:
+                    if x < a[midpoint]:
+                        last = midpoint-1
+                    else:
+                            first = midpoint+1
+    return found
+testlist = [0, 1, 2,6, 8,11, 13, 17, 19, 32, 42,]#Array
+print(searchBinary(testlist, 3,9))#binary search test number1= 3 , number2=9
