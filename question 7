@@ -1,0 +1,42 @@
+###         PSUEDOCODE
+###    def prime(div,user):
+###        if user ← 1:
+###             return True 
+###        else:
+###             if div = user:
+###                 return True
+###           else:
+###               if user = 2:
+###                    return True
+###               elif(user % div)= 0:#if input does not have a remainder, its not a prime
+###                        return False
+###               else:
+###                        return prime(div+1,user)
+###...........................................................................
+
+def prime(div ,user):
+    if user <= 1: #if input is 1 or less, its a prime.
+        return True
+
+    else:#if input is greater than 1,do the following:
+
+        if div == user:#BASE CASE- if dividing number is same as input,its a prime
+            return True
+
+        else: #if dividing number lesser than the input do the following:
+
+            if user == 2 :#if input is 2, its a prime
+                return True
+
+            elif(user % div)== 0:#if input does not have a remainder, its not a prime
+                return False
+
+            else:#if it has a remainder, recall the function and add  1 to the dividing number,
+                #(stop untill it reaches its base case)
+                return prime(div+1,user)
+print("Hello there!!! Welcome to my Prime Checker program\n\nWith the help of this program,you can determine whether your number is prime or not\n ")
+user= int (input("Please enter a number to check for prime: ")) #ask user for input
+
+#prints the return in the function, dividing number starts from 2.
+print(prime(2,user))
+            
