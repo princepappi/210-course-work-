@@ -1,0 +1,52 @@
+#addition of two matrices
+def add(a, b):#Defing a function known as add which takes 2 variables 'a,b'
+    result = [[0,0,0],
+             [0,0,0],
+             [0,0,0]]
+    for p in range(len(a)): # p iterate through rows'a'
+       for n in range(len(a[0])):#n iterate through columns
+           result[p][n] = a[p][n] + b[p][n] #formular to add the two matrices
+    return result #return the result
+
+
+def multscaler(number, a):# functiob to multiply a number with matrix
+    for p in range(len(a)):# iterate through rows
+        
+        for n in range(len(a[0])):# iterate through columns
+            a[p][n] *= number
+    return a
+
+# subtraction of two matrices
+def sub(a,b): #Defing a function known as add which takes 2 variables 'a,b'
+    result = [[0,0,0],
+             [0,0,0],
+             [0,0,0]]
+    for p in range(len(a)): # iterate through rows
+       for n in range(len(a[0])):# iterate through columns 
+           result[p][n] = a[p][n] - b[p][n] #formular to subtract the two matrices
+    return result #return the result
+
+
+# multiplying two matrices
+def mul(a, b):#Defing a function known as mult which takes 2 variables 'a,b'
+    result = [[0,0,0],
+             [0,0,0],
+             [0,0,0]]
+    for p in range(len(a)): # p iterate through rows of a
+       for n in range(len(b[0])):# n iterate through columns of b
+           for s in range(len(b)):# s iterate through rows of b
+               result[p][n] += a[p][s] * b[s][n] #formular to multiply the two matrices
+    return result #return the result
+
+
+# A=B*C –2*(B+C)
+B = [[0,1,2],
+    [3,4,5],
+    [6,7,8]]
+
+C = [[2,4,1],
+    [6,9,3],
+    [7,5,8]]
+
+A = sub(mul(B,C),multscaler(2, add(B,C)))# A=B*C –2*(B+C)
+print(A)#print the final result'A'
