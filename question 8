@@ -1,0 +1,31 @@
+###         PSUEDOCODE
+###    def vowelsRemoval(myString):
+###        if len(myString)← 0:
+###             return myString
+###        else:
+###             newString ← myString[1:len(myString) + 1]
+###             userLetter← myString[0]
+         
+###        if  userLetter ←  "AEIOUaeiou"
+###            return vowelsRemoval(newString)
+###        else:
+###            return  userLetter + vowelsRemoval(newString)
+###
+###...........................................................................
+
+def vowelsRemoval(myString): #defining a function known as vowels removal
+    if len(myString) is 0:#if length of string is 0 return the string
+        return myString
+    else: # if the length of the string is not equal to 0 do the code below
+        newString = myString[1:len(myString) + 1]
+        userLetter = myString[0]
+
+        if userLetter in "AEIOUaeiou":#if vowels are found within userletter 
+
+            return vowelsRemoval(newString)#return the vowels removal
+
+        else:#if not then perform the code below
+
+            return  userLetter + vowelsRemoval(newString)
+
+print(vowelsRemoval(input("Hello there!!! Welcome to my vowels removal program\n \nThis program allows you to remove the vowels from a word or a sentence\n\nWhy don't you have a go for yourself now!!!!!\n\nPlease enter in a word: ")))# ask user  for input
