@@ -1,0 +1,22 @@
+# question 1
+import random
+
+list2 = [] #New empty list
+
+def shuffle(userList):
+
+    print("Old List: ", userList) #Print the users input
+    
+    for i in range(len(userList)): #Repeat the code below the length of users input times
+        
+        randomValue = random.choice(userList) # pick a random value from the users list
+        list2.append(randomValue) # Insert the value picked to the new list
+        userList.remove(randomValue) #Remove value from old list to avoid duplication
+
+    print("\n\nnew list:", list2) # print new list
+
+
+#Ask for the users input, each time it find a space, split the input and save it in a list.
+userList = input("please input numbers (separate with spaces): ").split(" ")
+
+shuffle(userList) #call the function and pass the users input to it.
