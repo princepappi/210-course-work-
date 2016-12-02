@@ -1,0 +1,26 @@
+def numberSequence():#creating a function known asnumber sequence
+  q = 0 #starting point in the seqlist"1"
+  maxSubsequence=[]#empty list
+  tempSeq=[]#empty list
+  seqList=[1,2,4,3,5,6,0,5,7,8,3] #array
+  
+  while q < len(seqList):# m iteratethrough the array
+    if q ==0:#if starting point is 0
+      tempSeq.append(seqList[0])#add the number in position 0 to the empty tempSeqlist
+    elif(seqList[q] > seqList[q-1] ) :
+      	tempSeq.append(seqList[q])
+      	
+    else:#perform the code below
+  		  if (len(tempSeq) > len(maxSubsequence)):
+  		    del maxSubsequence[:]
+  		    maxSubsequence.append(tempSeq[:])
+  		    del tempSeq[:]
+  		    tempSeq.append(seqList[q])
+  		    maxSubsequence.append(tempSeq)          
+    q = q+1#add one to starting point 
+  if (len(maxSubsequence[0]) > len(maxSubsequence[1])):
+    print(maxSubsequence[0])
+    
+  else:
+        print( maxSubsequence[1])#print maximum subseuence
+numberSequence()#calling the function
