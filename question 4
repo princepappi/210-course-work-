@@ -1,0 +1,61 @@
+
+import random#..........1
+
+list2 = [] #........1
+
+def shuffle(userList):#.......1
+
+    print("Old List: ", userList)# ...........1
+    
+    for i in range(len(userList)):# .......n
+        
+        randomValue = random.choice(userList)# .........n
+        list2.append(randomValue) #.........n
+        userList.remove(randomValue)#..........n
+    print("\n\nnew list:", list2) #.........n
+
+
+#Ask for the users input, each time it find a space, split the input and save it in a list.
+userList = input("please input numbers (separate with spaces): ").split(" ")#........n
+
+shuffle(userList) #call the function and pass the users input to it.   ..............1
+number = int(input("Enter number: ")) # ask user input    .........n
+
+"Big O =  5 + 6n #as the value of n increases the value of 5 becomes pointless
+"Big O= n"
+
+
+
+
+
+#PART 1 (calculate factorial)
+factorial = 1 #create a varialble to calculate factorial  .........1
+
+while number > 1: # while users input is greateer than 1, do the code below........n
+    factorial = factorial * number #multiple users input by factorial(variable)........n
+    number = number - 1 #decrement user input so we can reach base case......n
+
+print("The factorial is:", factorial) #print factorial.........1
+
+
+#PART 2 (count trailing 0's)
+
+factorial = str(factorial) #convert to string check the length........1
+
+count = 0 #initialize counter (counts number of zeros).........1
+
+#for loop repeats length of factorial times
+for i in range(1, len(factorial)+1): ............n
+    #check whether the last value is 0, if yes, increment count, if no, stop.
+    if(factorial[-i] == '0'):# .......n
+        count = count + 1 #.........n
+    else:
+        break #........1
+
+print("The number of trailing zeros is:",count) #print count (trailing zeros)  #  ..........1
+
+"Big O =  6 + 6n"
+"Big O= n"
+
+
+
