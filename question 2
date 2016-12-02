@@ -1,0 +1,28 @@
+number = int(input("Enter number: ")) # ask user input
+
+#PART 1 (calculate factorial)
+factorial = 1 #create a varialble to calculate factorial 
+
+while number > 1: # while users input is greateer than 1, do the code below
+    factorial = factorial * number #multiple users input by factorial(variable)
+    number = number - 1 #decrement user input so we can reach base case
+
+print("The factorial is:", factorial) #print factorial
+
+
+#PART 2 (count trailing 0's)
+
+factorial = str(factorial) #convert to string check the length
+
+count = 0 #initialize counter (counts number of zeros)
+
+#for loop repeats length of factorial times
+for i in range(1, len(factorial)+1):
+    #check whether the last value is 0, if yes, increment count, if no, stop.
+    if(factorial[-i] == '0'):
+        count = count + 1
+    else:
+        break
+
+print("The number of trailing zeros is:",count) #print count (trailing zeros)
+
