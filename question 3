@@ -1,0 +1,20 @@
+###    PSUEDOCODE
+###   if user = 0
+###     print(inp, "is a perfect square")
+###   else:
+###     square ← int(math.sqrt(inp))
+###     square ←  square**2
+###     print(square ,"is the closest lower perfect square")
+###.............................................................
+
+
+import math #import math for sqaure root
+
+inp = int(input("Enter a number: ")) #ask users input
+
+if(inp % math.sqrt(inp) == 0): #If users input is a perfect square (no remainder)
+    print(inp, "is a perfect square")
+else: #If its not, do the following
+    square = int(math.sqrt(inp)) #convert square root to an int (cos we dont need decimals)
+    square = square**2 #square the square root so we can find the closest lower perfect square
+    print(square ,"is the closest lower perfect square")
